@@ -1,19 +1,19 @@
-import http from 'http'
-import Gun from 'gun'
+;(function(){
+  var gun = require('gun/examples/http');
+  if(!gun.back){ return } // http example auto spawns subprocess
 
-const server = http.createServer()
+  var fs = require('fs');
+  var server = gun.back('opt.web');
+  var route = server.route = {}
 
-const host = 'localhost'
-const port = 8080
+  fs.readdir('./route', function(err, dir){
+      if(err || !dir){ return }
+      dir.forEach(function(file){
+          if(!file){ return }
+          route[file.split('.')[0]] = require('./route/'+file);
+      });
+  });
 
-var gun = Gun({
-  web: server,
-  peers: ['https://relay.peer.ooo/gun']
-})
-
-server.listen(8080, () => {
-  console.log(
-    'Server started on port ' + port + ' with /gun',
-  )
   gun.get('test').on(data => console.log(data))
-})
+
+}());
