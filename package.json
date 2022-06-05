@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Simple gun server",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -13,5 +14,14 @@
   },
   "keywords": [
     "gundb"
-  ]
+  ],
+  "author": "Daniel Raeder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/draeder/gun-simple-server/issues"
+  },
+  "homepage": "https://github.com/draeder/gun-simple-server#readme",
+  "dependencies": {
+    "gun": "^0.2020.1237"
+  }
 }
