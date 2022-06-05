@@ -13,14 +13,5 @@
   },
   "keywords": [
     "gundb"
-  ],
-  "author": "Daniel Raeder",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/draeder/gun-simple-server/issues"
-  },
-  "homepage": "https://github.com/draeder/gun-simple-server#readme",
-  "dependencies": {
-    "gun": "^0.2020.1237"
-  }
+  ]
 }
